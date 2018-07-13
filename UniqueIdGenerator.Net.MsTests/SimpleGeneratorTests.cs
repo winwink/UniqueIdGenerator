@@ -15,10 +15,10 @@ namespace UniqueIdGenerator.Net.MsTests
         [TestMethod]
         public void SimpleGeneratorOrderedAndUniqueTest()
         {
-            GetIds(100000);
+            GetIds(9999);
 
             var stopwatch = Stopwatch.StartNew();
-            var ids = GetIds(100000);
+            var ids = GetIds(9999);
             stopwatch.Stop();
             Console.WriteLine("all done, times:" + stopwatch.ElapsedMilliseconds);
 
