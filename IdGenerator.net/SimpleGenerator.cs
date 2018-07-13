@@ -16,10 +16,10 @@ namespace UniqueIdGenerator.Net
     {
         private static object _lockObject = new object();
 
-        private static int num = 0;
+        private static long num = 0;
 
         /// <summary>
-        /// Can generate up to many(>10000) different IDs per millisecond
+        /// Can generate up to 9999 different IDs per millisecond
         /// </summary>
         /// <returns></returns>
         public static long NextLong()
@@ -28,6 +28,7 @@ namespace UniqueIdGenerator.Net
             lock(_lockObject)
             {
                 num++;
+                num = num % 10000;
                 result += num;
             }
             return result;
